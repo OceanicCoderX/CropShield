@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Query History - CropShield</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2d5016;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex: 1;
+            margin-left: 50px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7ec850;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .ask-query-btn {
+            background-color: #7ec850;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .ask-query-btn:hover {
+            background-color: #6ab840;
+        }
+
+        .user-profile {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: 32px;
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .filter-btn.active {
+            background-color: #2d5016;
+            color: #fff;
+            border-color: #2d5016;
+        }
+
+        .filter-btn:hover {
+            border-color: #7ec850;
+        }
+
+        /* Query Cards */
+        .query-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #7ec850;
+        }
+
+        .query-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .query-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        .status-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-replied {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .query-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .detail-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .detail-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .symptoms-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .symptoms-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .symptoms-text {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Images Section */
+        .images-section {
+            margin-bottom: 20px;
+        }
+
+        .images-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .image-thumbnail {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 2px solid #ddd;
+        }
+
+        .image-thumbnail:hover {
+            transform: scale(1.05);
+            border-color: #7ec850;
+        }
+
+        /* Admin Response Section */
+        .admin-response {
+            background-color: #f0f8f0;
+            border: 2px solid #7ec850;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .admin-response-title {
+            font-size: 14px;
+            color: #2d5016;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .admin-response-title::before {
+            content: "✓";
+            background-color: #7ec850;
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .response-item {
+            margin-bottom: 15px;
+        }
+
+        .response-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .response-label {
+            font-size: 12px;
+            color: #2d5016;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .response-content {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .suggested-product {
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 4px;
+            border-left: 3px solid #7ec850;
+        }
+
+        .product-name {
+            font-weight: bold;
+            color: #2d5016;
+            margin-bottom: 5px;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a3a0a;
+            color: #fff;
+            padding: 50px 40px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #7ec850;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-section p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .footer-section ul li::before {
+            content: "✓ ";
+            color: #7ec850;
+            font-weight: bold;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .empty-state-title {
+            font-size: 20px;
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+
+        .empty-state-text {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                margin-left: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .query-details {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <span>🌿</span>
+            <span>Crop Shield</span>
+        </div>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#crops">CROPS</a>
+            <a href="#products">PRODUCTS</a>
+            <a href="#contact">CONTACT</a>
+            <a href="#testimonials">TESTIMONIALS</a>
+        </nav>
+        <div class="header-right">
+            <button class="ask-query-btn">FARMER ASK QUERY</button>
+            <span>🔍</span>
+            <span>❓</span>
+            <div class="user-profile">Khushi Shewale | LogOut</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="page-title">My Query History</h1>
+        <p class="page-subtitle">Track all your crop-related queries and admin responses</p>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn active">All Queries</button>
+            <button class="filter-btn">Pending</button>
+            <button class="filter-btn">Replied</button>
+        </div>
+
+        <!-- Query Cards -->
+        <!-- Query 1 - Replied -->
+        <div class="query-card">
+            <div class="query-header">
+                <div class="query-title">Tomato Leaf Spot Disease</div>
+                <span class="status-badge status-replied">Replied</span>
+            </div>
+
+            <div class="query-details">
+                <div class="detail-item">
+                    <div class="detail-label">Crop Name</div>
+                    <div class="detail-value">Tomato</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Crop Part</div>
+                    <div class="detail-value">Leaves</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Query Date</div>
+                    <div class="detail-value">28 October, 2025</div>
+                </div>
+            </div>
+
+            <div class="symptoms-section">
+                <div class="symptoms-label">Symptoms</div>
+                <div class="symptoms-text">
+                    Brown circular spots appearing on tomato leaves with yellow halos. Spots are increasing in size and affecting multiple leaves. The plant appears weak and growth has slowed down.
+                </div>
+            </div>
+
+            <div class="images-section">
+                <div class="images-label">Uploaded Images</div>
+                <div class="images-grid">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Tomato leaf disease" class="image-thumbnail">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Disease progression" class="image-thumbnail">
+                </div>
+            </div>
+
+            <!-- Admin Response -->
+            <div class="admin-response">
+                <div class="admin-response-title">Admin Response</div>
+
+                <div class="response-item">
+                    <div class="response-label">Question</div>
+                    <div class="response-content">
+                        Have you noticed any water droplets or high humidity around the affected leaves? Are the spots appearing on lower leaves first?
+                    </div>
+                </div>
+
+                <div class="response-item">
+                    <div class="response-label">Answer & Diagnosis</div>
+                    <div class="response-content">
+                        Based on the images and symptoms, this appears to be Early Blight (Alternaria solani), a fungal disease common in tomatoes. The brown circular spots with concentric rings are characteristic of this disease. It thrives in warm, humid conditions.
+                    </div>
+                </div>
+
+                <div class="response-item">
+                    <div class="response-label">Suggested Product</div>
+                    <div class="suggested-product">
+                        <div class="product-name">🌿 Fungicide - Mancozeb 75% WP</div>
+                        <div class="product-description">
+                            Effective against Early Blight. Apply 2.5g per liter of water. Spray every 10-14 days. Remove affected leaves and improve air circulation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Query 2 - Pending -->
+        <div class="query-card">
+            <div class="query-header">
+                <div class="query-title">Wheat Rust Problem</div>
+                <span class="status-badge status-pending">Pending</span>
+            </div>
+
+            <div class="query-details">
+                <div class="detail-item">
+                    <div class="detail-label">Crop Name</div>
+                    <div class="detail-value">Wheat</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Crop Part</div>
+                    <div class="detail-value">Stems & Leaves</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Query Date</div>
+                    <div class="detail-value">26 October, 2025</div>
+                </div>
+            </div>
+
+            <div class="symptoms-section">
+                <div class="symptoms-label">Symptoms</div>
+                <div class="symptoms-text">
+                    Reddish-brown pustules appearing on wheat stems and leaf sheaths. The affected areas are becoming brittle and breaking easily. Spread is rapid across the field.
+                </div>
+            </div>
+
+            <div class="images-section">
+                <div class="images-label">Uploaded Images</div>
+                <div class="images-grid">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Wheat rust" class="image-thumbnail">
+                </div>
+            </div>
+        </div>
+
+        <!-- Query 3 - Replied -->
+        <div class="query-card">
+            <div class="query-header">
+                <div class="query-title">Rice Blast Disease</div>
+                <span class="status-badge status-replied">Replied</span>
+            </div>
+
+            <div class="query-details">
+                <div class="detail-item">
+                    <div class="detail-label">Crop Name</div>
+                    <div class="detail-value">Rice</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Crop Part</div>
+                    <div class="detail-value">Panicles</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Query Date</div>
+                    <div class="detail-value">20 October, 2025</div>
+                </div>
+            </div>
+
+            <div class="symptoms-section">
+                <div class="symptoms-label">Symptoms</div>
+                <div class="symptoms-text">
+                    Gray-white lesions on rice panicles with dark borders. Grains are not filling properly and appear shriveled. Yield loss is significant.
+                </div>
+            </div>
+
+            <div class="images-section">
+                <div class="images-label">Uploaded Images</div>
+                <div class="images-grid">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Rice blast" class="image-thumbnail">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Grain damage" class="image-thumbnail">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Field view" class="image-thumbnail">
+                </div>
+            </div>
+
+            <!-- Admin Response -->
+            <div class="admin-response">
+                <div class="admin-response-title">Admin Response</div>
+
+                <div class="response-item">
+                    <div class="response-label">Question</div>
+                    <div class="response-content">
+                        When did you first notice these symptoms? Have you been maintaining proper water management in your field?
+                    </div>
+                </div>
+
+                <div class="response-item">
+                    <div class="response-label">Answer & Diagnosis</div>
+                    <div class="response-content">
+                        This is Rice Blast (Pyricularia oryzae), a serious fungal disease affecting rice panicles. The disease causes significant yield loss if not managed properly. It spreads rapidly in cool, wet conditions.
+                    </div>
+                </div>
+
+                <div class="response-item">
+                    <div class="response-label">Suggested Product</div>
+                    <div class="suggested-product">
+                        <div class="product-name">🌿 Fungicide - Tricyclazole 75% WP</div>
+                        <div class="product-description">
+                            Highly effective against Rice Blast. Apply 1g per liter of water. Spray at boot stage and again at 50% flowering. Maintain proper field drainage.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About CropShield</h3>
+                <p>We provide image-based guides, symptom checkers, and a direct farmer-to-admin connection so farmers receive timely, actionable advice. Our mission is to reduce yield loss and promote sustainable, affordable solutions for small and large farms alike.</p>
+                <button class="ask-query-btn" style="margin-top: 15px;">ABOUT US</button>
+            </div>
+
+            <div class="footer-section">
+                <h3>Product Category</h3>
+                <ul>
+                    <li>Fungicides</li>
+                    <li>Bactericides</li>
+                    <li>Viral Suppressants</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" style="color: #ccc; text-decoration: none;">How do I identify diseases?</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none;">Preventive measures</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none;">Upload images for diagnosis</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>🌿 Crop Shield © 2025. All rights reserved.</div>
+            <a href="#" style="color: #7ec850; text-decoration: none;">Templates Hub</a>
+        </div>
+    </footer>
+</body>
+</html>
