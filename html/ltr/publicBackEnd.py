@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -42,17 +42,17 @@ receiver_email = form.getvalue("Email")
 password = "sqzb uvyu ihwh smaw"
 
 # Create the email content
-subject = "- 🌱 Good News! CropShield Responded to Your Query "
+subject = "- ðŸŒ± Good News! CropShield Responded to Your Query "
 body = f"""
-        Hello Farmer🙏,
+        Hello FarmerðŸ™,
 
-        We’re happy to inform you that the admin has responded to your query. Please visit the link below to read the full reply:
+        Weâ€™re happy to inform you that the admin has responded to your query. Please visit the link below to read the full reply:
         
-        🔗 **Website link:** https://cropshield.com
+        ðŸ”— **Website link:** https://cropshield.com
 
         Thank you for reaching out! If you need further assistance, feel free to contact us anytime.
 
-        Best wishes 🌱,
+        Best wishes ðŸŒ±,
         Team CropShield
 """
 

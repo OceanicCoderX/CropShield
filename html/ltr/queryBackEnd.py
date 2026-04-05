@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -57,17 +57,17 @@ except Exception as e:
 if db_success and receiver_email:
     sender_email = "oceanprincess003@gmail.com"
     password = "sqzb uvyu ihwh smaw" # This is an App Password
-    subject = "🌱 Good News! CropShield Responded to Your Query"
+    subject = "ðŸŒ± Good News! CropShield Responded to Your Query"
     body = f"""
-        Hello Farmer🙏, <br><br>
+        Hello FarmerðŸ™, <br><br>
 
-        We’re happy to inform you that the admin has responded to your query. Please visit the link below to read the full reply: <br><br>
+        Weâ€™re happy to inform you that the admin has responded to your query. Please visit the link below to read the full reply: <br><br>
 
-        🔗 **Website link:** https://cropshield.com <br><br>
+        ðŸ”— **Website link:** https://cropshield.com <br><br>
 
         Thank you for reaching out! If you need further assistance, feel free to contact us anytime. <br><br>
 
-        Best wishes 🌱, <br>
+        Best wishes ðŸŒ±, <br>
         Team CropShield
     """
 

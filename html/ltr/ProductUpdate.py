@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb

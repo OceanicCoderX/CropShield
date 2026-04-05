@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -97,7 +97,7 @@ print(f"""
                                        <div class="user-thumb"> <img src="images/auser.jpg" alt=""></div>
                                        <div class="comment-txt">
                                           <h6> Mason Gray </h6>
-                                          <p> Personally I think a combination of all these methods is most effective, but in today’s post I will be focusing specifically on how to use and style WordPress’ built-in sticky post feature and highlighting it’s best use case based on my own experience. </p>
+                                          <p> Personally I think a combination of all these methods is most effective, but in todayâ€™s post I will be focusing specifically on how to use and style WordPressâ€™ built-in sticky post feature and highlighting itâ€™s best use case based on my own experience. </p>
                                           <ul class="comment-time">
                                              <li>Posted: 09 July, 2018 at 2:37 pm</li>
                                              <li> <a href="#"><i class="fas fa-reply"></i> Reply</a> </li>
@@ -109,7 +109,7 @@ print(f"""
                                              <div class="user-thumb"> <img src="images/auser.jpg" alt=""></div>
                                              <div class="comment-txt">
                                                 <h6> Rog Kelly </h6>
-                                                <p> Personally I think a combination of all these methods is most effective, but in today’s post I will be focusing specifically on how to use and style WordPress’ built-in sticky post feature and highlighting it’s best use case based on my own experience. </p>
+                                                <p> Personally I think a combination of all these methods is most effective, but in todayâ€™s post I will be focusing specifically on how to use and style WordPressâ€™ built-in sticky post feature and highlighting itâ€™s best use case based on my own experience. </p>
                                                 <ul class="comment-time">
                                                    <li>Posted: 09 July, 2018 at 2:37 pm</li>
                                                    <li> <a href="#"><i class="fas fa-reply"></i> Reply</a> </li>
@@ -125,7 +125,7 @@ print(f"""
                                        <div class="user-thumb"> <img src="images/auser.jpg" alt=""></div>
                                        <div class="comment-txt">
                                           <h6> Harry Butler </h6>
-                                          <p> Personally I think a combination of all these methods is most effective, but in today’s post I will be focusing specifically on how to use and style WordPress’ built-in sticky post feature and highlighting it’s best use case based on my own experience. </p>
+                                          <p> Personally I think a combination of all these methods is most effective, but in todayâ€™s post I will be focusing specifically on how to use and style WordPressâ€™ built-in sticky post feature and highlighting itâ€™s best use case based on my own experience. </p>
                                           <ul class="comment-time">
                                              <li>Posted: 09 July, 2018 at 2:37 pm</li>
                                              <li> <a href="#"><i class="fas fa-reply"></i> Reply</a> </li>

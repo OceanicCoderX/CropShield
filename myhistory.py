@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -95,7 +95,7 @@ if myresult:
                         <div class="response-label">Suggested Product</div>
                         <div class="suggested-product">
                             <img src="html/ltr/assets/Product/{reply[2]}/{reply[3]}" alt="Tomato leaf disease" style="width:150px; height:150px;">
-                            <div class="product-name">🌿{reply[4]}</div>
+                            <div class="product-name">ðŸŒ¿{reply[4]}</div>
                             <div class="product-description">
                                 {reply[5]}
                             </div>
@@ -408,7 +408,7 @@ if myresult:
             }
 
             .admin-response-title::before {
-                content: "✓";
+                content: "âœ“";
                 background-color: #7ec850;
                 color: #fff;
                 width: 24px;

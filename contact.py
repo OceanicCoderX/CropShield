@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -79,7 +79,7 @@ print(f"""
                      </div>
 
                      <div class="contact-form mb60">
-                        <h3 data-i18n="contact_farmer_support">Farmer Support — Upload Photos for Diagnosis</h3>
+                        <h3 data-i18n="contact_farmer_support">Farmer Support â€” Upload Photos for Diagnosis</h3>
                         <form method="post" action="contact.py" enctype="multipart/form-data">
                            <ul class="cform">
                               <li class="full">

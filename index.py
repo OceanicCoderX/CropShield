@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -51,9 +51,9 @@ print(f"""
             <div class="item">
                      <div class="slider-caption h2slider">
                   <div class="container">
-                     <strong data-i18n="slider3_strong">Ask. <span> & don’t Act.</span> Advance</strong>
-                     <h1 data-i18n="slider3_h1">Your Farm’s Health </h1>
-                     <p data-i18n="slider3_p">Before <strong>it’s too late</strong> Starts Here.</p>
+                     <strong data-i18n="slider3_strong">Ask. <span> & donâ€™t Act.</span> Advance</strong>
+                     <h1 data-i18n="slider3_h1">Your Farmâ€™s Health </h1>
+                     <p data-i18n="slider3_p">Before <strong>itâ€™s too late</strong> Starts Here.</p>
                      <a href="crop-category.py" class="active" data-i18n="cta_crop_category">Crop Category</a> <a href="faq.py?fid={fid}" data-i18n="cta_faq">Farmer Ask Query</a>
                   </div>
                </div>
@@ -126,9 +126,9 @@ print(f"""
                   </div>
                   <div class="col-md-7">
                      <div class="h2-about-txt">
-                        <h3>CropShield — Smart Crop Diagnosis & Support</h3>
+                        <h3>CropShield â€” Smart Crop Diagnosis & Support</h3>
                         <h2>Eco-friendly products can be made from scratch.</h2>
-                        <p>CropShield empowers farmers with fast, practical help for crop problems — from pests and diseases to nutrient deficiencies and management tips.</p>
+                        <p>CropShield empowers farmers with fast, practical help for crop problems â€” from pests and diseases to nutrient deficiencies and management tips.</p>
                         <a class="aboutus" href="about.py">More About us</a> 
                      </div>
                   </div>
@@ -192,7 +192,7 @@ print(f"""
                         <h5>Protect Crops.</h5>
                         <h2>Empower Farmers. Stop Crop Loss.</h2>
                      </div>
-                     <p> We need your support and help to Stop Globar Warning. Few generations ago it to seemed like the world’s resources were infinite, and the people needed only. </p>
+                     <p> We need your support and help to Stop Globar Warning. Few generations ago it to seemed like the worldâ€™s resources were infinite, and the people needed only. </p>
                      <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                      </div>
@@ -356,7 +356,7 @@ print(f"""
                <div class="row">
                   <div class="col-md-12">
                      <h1> Farmer Ask Query</h1>
-                     <p>Join us in transforming agriculture — save water, conserve energy, 
+                     <p>Join us in transforming agriculture â€” save water, conserve energy, 
                         reduce pollution, and plant for a greener future with solar-powered solutions.
                      </p>
                      <a id="faqLink" href="faq.py" class="cus">Farmer Ask Query <i class="fa-solid fa-arrow-right"></i></a> 

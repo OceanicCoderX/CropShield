@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -256,7 +256,7 @@ if fid:
 
                     <div class="col-md-8">
                         <div class="white-card">
-                            <h3 class="card-title">📝 Recent Queries & Responses</h3>
+                            <h3 class="card-title">ðŸ“ Recent Queries & Responses</h3>
                             <div class="query-list">
         """)
 
@@ -271,7 +271,7 @@ if fid:
                                             <span class="query-status">{status}</span>
                                         </div>
                                         <p class="query-text">{(symptoms[:160] + '...') if symptoms and len(symptoms)>160 else (symptoms or '')}</p>
-                                        <a href="myhistory.py?fid={fid}" class="view-details">View Details →</a>
+                                        <a href="myhistory.py?fid={fid}" class="view-details">View Details â†’</a>
                                     </div>
                 """)
         else:
@@ -285,7 +285,7 @@ if fid:
 
                     <div class="col-md-12">
                         <div class="white-card">
-                            <h3 class="card-title">🌾 Crops Viewed Recently</h3>
+                            <h3 class="card-title">ðŸŒ¾ Crops Viewed Recently</h3>
         """)
 
         if recent_crops:
@@ -301,7 +301,7 @@ if fid:
 
                     <div class="col-md-12">
                         <div class="white-card">
-                            <h3 class="card-title">🛍️ Products Suggested by Admin</h3>
+                            <h3 class="card-title">ðŸ›ï¸ Products Suggested by Admin</h3>
                             <div class="product-grid">
         """)
 
@@ -328,16 +328,16 @@ if fid:
                     <div class="row">
                     <div class="col-md-6"> 
                         <div class="white-card"> 
-                            <h3 class="card-title">💭 Submit Feedback</h3>
+                            <h3 class="card-title">ðŸ’­ Submit Feedback</h3>
                             <form action="FeedBackEnd.py" method="POST"> 
                                 <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                                 <select name="rating" class="form-control">
                                     <option value="">Select Rating</option>
-                                    <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-                                    <option value="4">⭐⭐⭐⭐ Very Good</option>
-                                    <option value="3">⭐⭐⭐ Good</option>
-                                    <option value="2">⭐⭐ Fair</option>
-                                    <option value="1">⭐ Poor</option>
+                                    <option value="5">â­â­â­â­â­ Excellent</option>
+                                    <option value="4">â­â­â­â­ Very Good</option>
+                                    <option value="3">â­â­â­ Good</option>
+                                    <option value="2">â­â­ Fair</option>
+                                    <option value="1">â­ Poor</option>
                                 </select>
                                 <textarea name="message" class="form-control" placeholder="Share your experience with us..." rows="4" required></textarea>
                                 <input type="hidden" name="fid" value="{fid}">
@@ -348,7 +348,7 @@ if fid:
 
                     <div class="col-md-6"> 
                         <div class="white-card"> 
-                            <h3 class="card-title">🌱 Quick Crop Categories</h3>
+                            <h3 class="card-title">ðŸŒ± Quick Crop Categories</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 10px;"> 
         """)
 

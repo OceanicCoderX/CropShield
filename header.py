@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -90,8 +90,8 @@ print("""
                         </a>
                         <div class="dropdown-menu" aria-labelledby="langDropdown">
                            <a class="dropdown-item" href="javascript:void(0);" onclick="setLanguage('en')">English</a>
-                           <a class="dropdown-item" href="javascript:void(0);" onclick="setLanguage('hi')">हिन्दी </a>
-                           <a class="dropdown-item" href="javascript:void(0);" onclick="setLanguage('mr')">मराठी</a>
+                           <a class="dropdown-item" href="javascript:void(0);" onclick="setLanguage('hi')">à¤¹à¤¿à¤¨à¥à¤¦à¥€ </a>
+                           <a class="dropdown-item" href="javascript:void(0);" onclick="setLanguage('mr')">à¤®à¤°à¤¾à¤ à¥€</a>
                         </div>
                      </li>
 
@@ -117,7 +117,7 @@ print("""
             </nav>
          </header>
          <div id="search">
-            <button type="button" class="close">×</button>
+            <button type="button" class="close">Ã—</button>
             <form class="search-overlay-form">
                <input type="search" value="" placeholder="type keyword(s) here" />
                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>

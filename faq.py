@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -143,7 +143,7 @@ if fid:
                      <div class="col-lg-7">
                         <div class="section-title-2">
                            <h5>Got Questions?</h5>
-                           <h2>We’re Here To Help</h2>
+                           <h2>Weâ€™re Here To Help</h2>
                            <p class="lead">Below are answers to the questions we get asked most often. If you still need help, please
                               <a href="contact.py">contact us</a>.</p>
                         </div>
@@ -156,7 +156,7 @@ if fid:
                      <br><br><br>
                      
                      <div class="contact-form mb60">
-                        <h3>Farmer Support — Upload Photos for Diagnosis</h3>
+                        <h3>Farmer Support â€” Upload Photos for Diagnosis</h3>
                         <form method="post" action="faqBackEnd.py" enctype="multipart/form-data">
                            <ul class="cform">
                               <li class="full">

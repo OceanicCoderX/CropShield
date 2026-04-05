@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -41,8 +41,8 @@ print("""
                      <div class="col-lg-6">
                            <div class="about-text">
                               <h5 data-i18n="about_protecting">Protecting Your Harvest</h5>
-                              <h2 data-i18n="about_heading">CropShield — Smart Crop Diagnosis & Support</h2>
-                              <p><strong data-i18n="about_intro">CropShield empowers farmers with fast, practical help for crop problems — from pests and
+                              <h2 data-i18n="about_heading">CropShield â€” Smart Crop Diagnosis & Support</h2>
+                              <p><strong data-i18n="about_intro">CropShield empowers farmers with fast, practical help for crop problems â€” from pests and
                               diseases to nutrient deficiencies and management tips.</strong></p>
                               <p data-i18n="about_body">We provide image-based guides, symptom checkers, and a direct farmer-to-admin connection so farmers
                               receive timely, actionable advice. Our mission is to reduce yield loss and promote sustainable,
@@ -80,7 +80,7 @@ print("""
                               <div class="eco-box">
                                  <span class="econ-icon"><i class="fas fa-headset"></i></span>
                                  <h5> Direct Support </h5>
-                                 <p>Message admin, request callbacks, upload photos, or schedule site visits — all from one page.</p>
+                                 <p>Message admin, request callbacks, upload photos, or schedule site visits â€” all from one page.</p>
                               </div>
                            </div>
                            <div class="col-6">

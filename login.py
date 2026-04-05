@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import sys
 import cgi
 import cgitb
@@ -23,7 +23,7 @@ print("""
          <!--Inner Header Start-->
          <section class="wf100 p100 inner-header">
             <div class="container">
-               <h1>Login — CropShield</h1>
+               <h1>Login â€” CropShield</h1>
                <ul>
                   <li><a href="#">Home</a></li>
                   <li><a href="#"> Login </a></li>

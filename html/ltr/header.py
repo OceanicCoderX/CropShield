@@ -1,4 +1,4 @@
-#!C:/Python310/python.exe
+﻿#!C:/Users/khush/AppData/Local/Programs/Python/Python310/python.exe
 import cgi
 import cgitb
 cgitb.enable()
@@ -101,8 +101,8 @@ print("""
                         <li class="nav-item" style="margin-right:10px; margin-top:6px;">
                             <select id="langSelect" class="form-control" style="height:36px;">
                                 <option value="en">English</option>
-                                <option value="hi">हिन्दी</option>
-                                <option value="mr">मराठी</option>
+                                <option value="hi">à¤¹à¤¿à¤¨à¥à¤¦à¥€</option>
+                                <option value="mr">à¤®à¤°à¤¾à¤ à¥€</option>
                             </select>
                         </li>
 
@@ -250,7 +250,7 @@ print("""
             });
 
         } else {
-            alert("⚠️ Please login first!");
+            alert("âš ï¸ Please login first!");
             window.location.href = "adminlogin.py";
         }
         
